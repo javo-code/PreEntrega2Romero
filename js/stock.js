@@ -28,7 +28,7 @@ const productos = [
 
     {
         id: 4,
-        nombre: "Alfaré",
+        nombre: "Alfare",
         tipo: "alimento",
         descripcion: "x400 grs.",
         precio: 5600,

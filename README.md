@@ -2,7 +2,7 @@
 
 El usuario podrá:
 
- - Visualizar una lista de los productos-
+ - Visualizar una lista de los productos
  - Ordenarlos precio de modo ascendente, decreciente y/o alfabeticamente.
  - Comprar productos.
  - Agregar productos a un "carrito" de compras.
