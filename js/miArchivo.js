@@ -6,7 +6,7 @@ alert('Biendvenid@, usuari@ ' + '\n\n' + 'Por favor, elija un producto de la lis
 //Creamos array para el "carrito".
 
 const carrito = []
-
+let subTotal = 0
 // Funcion ver lista de oredenada de productos 
 
 const comprar = () => {
@@ -49,7 +49,8 @@ const mostrarListaOrdenada = () => {
 const comprarProductos = (listaOrdenada) => {
     let productoNombre = ' '
     let productoCantidad = 0
-    let otroProducto = false
+    let askAgain = false
+
 
     do {
         productoNombre = prompt('Que producto desea?' + '\n\n' + listaOrdenada.join('\n')) // ver como hacer para sustituir con listaProductosOrdenados segun el caso.
@@ -64,13 +65,14 @@ const comprarProductos = (listaOrdenada) => {
             alert('El Produto no existe...')
         }
 
-        otroProducto = confirm('Desea agregar otro producto?')
+        askAgain = confirm('Desea agregar otro producto?')
 
-    } while (otroProducto);
+    } while (askAgain)
+
 
     confirmarCompra()
-};
 
+};
 
 // Funcion sumar productos DUPLICADOS.
 const agregarAlCarrito = (producto, productoId, productoCantidad) => {
@@ -118,11 +120,29 @@ const confirmarCompra = () => {
 const finalizarCompra = (listaOrdenada) => {
     const cantidadTotal = carrito.reduce((i, item) => i + item.cantidad, 0)
     const precioTotal = carrito.reduce((i, item) => i + (item.cantidad * item.precio), 0)
+
+
     alert('Resumen de su compra: ' + '\n\n' + listaOrdenada.join('\n')
         + '\n\nTotal de productos: ' + cantidadTotal
-        + '\n\nEl total de su compra es de: $ ' + precioTotal + '.00'
-        + '\n\nGracias, vuelva Pronto!'
+        + '\n\nEl total de su compra es de: $ ' + precioTotal + ',00'
     )
+    const precioConDescuento = CalcularDescuento(precioTotal);
+
+    alert('El precio final es de: $' + precioConDescuento + ',00'
+        + '\n\nGracias por su compra!')
+};
+
+//Funcion calcular descuento
+
+const CalcularDescuento = (precioTotal) => {
+
+    if (precioTotal >= 80000) {
+        precioConDescuento = precioTotal * 0.9;
+        alert('Por alcanzar los $80.000,00 recibe un 10% de descuento sobre el importe total de su compra!!')
+        return precioConDescuento;
+    } else {
+        return precioTotal;
+    };
 };
 
 comprar();
