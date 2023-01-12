@@ -33,7 +33,7 @@ const ordenarMayorMenor = () => {
 };
 
 
-// Funcion mosrar LISTA ORDENADA.
+// Funcion mostrar LISTA ORDENADA.
 
 const mostrarListaOrdenada = () => {
     const listaOrdenada = productos.map(producto => {
@@ -100,7 +100,7 @@ const eliminarProductoCarrito = (nombreProductoEliminar) => {
 
 const confirmarCompra = () => {
     const listaOrdenada = carrito.map(producto => {
-        return '- ' + producto.nombre + ' ~> Cantidad:' + producto.cantidad
+        return '- ' + producto.nombre + ' ~> Cantidad: ' + producto.cantidad
     })
 
     const ischeckout = confirm('Productos en su carrito: ' + '\n\n' + listaOrdenada.join('\n')
@@ -120,7 +120,7 @@ const finalizarCompra = (listaOrdenada) => {
     const precioTotal = carrito.reduce((i, item) => i + (item.cantidad * item.precio), 0)
     alert('Resumen de su compra: ' + '\n\n' + listaOrdenada.join('\n')
         + '\n\nTotal de productos: ' + cantidadTotal
-        + '\n\nEl total de su compra es de: $' + precioTotal
+        + '\n\nEl total de su compra es de: $ ' + precioTotal + '.00'
         + '\n\nGracias, vuelva Pronto!'
     )
 };
