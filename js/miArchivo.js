@@ -138,15 +138,13 @@ const finalizarCompra = (listaOrdenada) => {
     )
 
     //Emitir comprobantes FACTURA "A" (+IVA) / CONSUMIDOR FINAL (s/IVA).
-
+    const precioConDescuento = calcularDescuento(precioTotal);
     const calcularIva = x => x * 0.21;
     const sumarValores = (a, b) => a + b;
 
     const isfactura = confirm('Si desea que se emita un comprobante tipo "A", seleccione "ACEPTAR'
         + '\n\nPara emitir comprobante "CONSUMIDOR FINAL.'
     )
-
-    const precioConDescuento = calcularDescuento(precioTotal);
 
     if (isfactura) {
         const iva = calcularIva(precioConDescuento);
@@ -158,6 +156,8 @@ const finalizarCompra = (listaOrdenada) => {
     else {
         alert('El precio final es de: $' + precioConDescuento + ',00'
             + '\n\nGracias por su compra!')
+
+        sumarValores(precioConDescuento, iva);
     }
 };
 
