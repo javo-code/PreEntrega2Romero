@@ -31,7 +31,7 @@ const productos = [
         nombre: "Alfare",
         tipo: "alimento",
         descripcion: "x400 grs.",
-        precio: 5600,
+        precio: 10000,
         cantidad: 0
     }
 ]
