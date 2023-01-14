@@ -47,6 +47,8 @@ const mostrarListaOrdenada = () => {
 
 // Funcion COMPRAR + estructura DO WHILE para agregar mas productos al "carrito."
 
+
+
 const comprarProductos = (listaOrdenada) => {
     let productoNombre = ' '
     let productoCantidad = 0
@@ -125,6 +127,7 @@ const confirmarCompra = () => {
 //FIN compra.
 
 const finalizarCompra = (listaOrdenada) => {
+
     const cantidadTotal = carrito.reduce((i, item) => i + item.cantidad, 0)
     const precioTotal = carrito.reduce((i, item) => i + (item.cantidad * item.precio), 0)
 
@@ -133,11 +136,29 @@ const finalizarCompra = (listaOrdenada) => {
         + '\n\nTotal de productos: ' + cantidadTotal
         + '\n\nEl total de su compra es de: $ ' + precioTotal + ',00'
     )
+
+    //Emitir comprobantes FACTURA "A" (+IVA) / CONSUMIDOR FINAL (s/IVA).
+
+    const calcularIva = x => x * 0.21;
+    const sumarValores = (a, b) => a + b;
+
+    const isfactura = confirm('Si desea que se emita un comprobante tipo "A", seleccione "ACEPTAR'
+        + '\n\nPara emitir comprobante "CONSUMIDOR FINAL.'
+    )
+
     const precioConDescuento = calcularDescuento(precioTotal);
 
-    alert('El precio final es de: $' + precioConDescuento + ',00'
-        + '\n\nGracias por su compra!')
+    if (isfactura) {
+        const iva = calcularIva(precioConDescuento);
+        const precioConIva = sumarValores(precioConDescuento, iva);
 
+        alert('El precio final es de: $' + precioConIva + ',00'
+            + '\n\nGracias por su compra!')
+    }
+    else {
+        alert('El precio final es de: $' + precioConDescuento + ',00'
+            + '\n\nGracias por su compra!')
+    }
 };
 
 //Funcion CALCULAR descuento.
@@ -153,6 +174,10 @@ const calcularDescuento = (precioTotal) => {
     };
 
 };
+/* 
+
+const iva = calcularIva(precioConDescuento);*/
+
 
 
 ordenar();

@@ -9,4 +9,5 @@ El usuario podrá:
  - Listar los productos de su "carrito".
  - Remover productos del "carrito".
  - Ver un resumen de su compra (artículo + precio + total de su compra).
+ - Aplicar descuento del 10 % a partir de los $80k.
  - Finalizar compra.

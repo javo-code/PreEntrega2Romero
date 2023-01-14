@@ -13,7 +13,7 @@ const productos = [
         nombre: "Ensure",
         tipo: "alimento",
         descripcion: "x800 grs.",
-        precio: 10000,
+        precio: 8000,
         cantidad: 0
     },
 
