@@ -13,7 +13,7 @@ const productos = [
         nombre: "Ensure",
         tipo: "alimento",
         descripcion: "x800 grs.",
-        precio: 7000,
+        precio: 10000,
         cantidad: 0
     },
 
@@ -22,7 +22,7 @@ const productos = [
         nombre: "Lactoproteyn",
         tipo: "alimento",
         descripcion: "x600 grs.",
-        precio: 8000,
+        precio: 7000,
         cantidad: 0
     },
 

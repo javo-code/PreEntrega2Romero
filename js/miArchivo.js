@@ -8,7 +8,6 @@ alert('Biendvenid@, usuari@ '
 
 const carrito = []
 
-
 // Funcion ver lista de productos ORDENADA.
 
 const ordenar = () => {
@@ -73,10 +72,15 @@ const comprarProductos = (listaOrdenada) => {
 
 
     confirmarCompra()
+<<<<<<< HEAD
 
 };
 
 // Funcion sumar productos DUPLICADOS al "carrito".
+=======
+
+};
+>>>>>>> ab91549b4b0216c45bbf1d83e2f83b1440ca28ad
 
 const agregarAlCarrito = (producto, productoId, productoCantidad) => {
     const productoDuplicado = carrito.find(producto => producto.id === productoId)
@@ -137,6 +141,22 @@ const finalizarCompra = (listaOrdenada) => {
 
     alert('El precio final es de: $' + precioConDescuento + ',00'
         + '\n\nGracias por su compra!')
+<<<<<<< HEAD
+=======
+};
+
+//Funcion calcular descuento
+
+const CalcularDescuento = (precioTotal) => {
+
+    if (precioTotal >= 80000) {
+        precioConDescuento = precioTotal * 0.9;
+        alert('Por alcanzar los $80.000,00 recibe un 10% de descuento sobre el importe total de su compra!!')
+        return precioConDescuento;
+    } else {
+        return precioTotal;
+    };
+>>>>>>> ab91549b4b0216c45bbf1d83e2f83b1440ca28ad
 };
 
 //Funcion CALCULAR descuento.
